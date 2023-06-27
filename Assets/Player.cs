@@ -52,16 +52,16 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.Update();
-        FlipController(rb.velocity.x);
     }
 
 
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
+        FlipController(_xVelocity);
     }
 
-    public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+    public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
 
 
     private void OnDrawGizmos()
