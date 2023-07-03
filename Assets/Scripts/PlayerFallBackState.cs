@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerFallBackState : PlayerState
 {
     public PlayerFallBackState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
@@ -21,7 +17,7 @@ public class PlayerFallBackState : PlayerState
     public override void Update()
     {
         base.Update();
-   
+
         if (player.lastAttackFinished == false)
             stateMachine.ChangeState(player.idleState);
     }

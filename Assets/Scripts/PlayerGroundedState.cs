@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerGroundedState : PlayerState
@@ -27,8 +25,8 @@ public class PlayerGroundedState : PlayerState
 
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
-        
-        if(Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
+
+        if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
         {
             stateMachine.ChangeState(player.jumpState);
         }

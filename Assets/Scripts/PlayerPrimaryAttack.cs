@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPrimaryAttack : PlayerState
@@ -17,8 +15,8 @@ public class PlayerPrimaryAttack : PlayerState
     public override void Enter()
     {
         base.Enter();
-        
-        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboTimeWindow) 
+
+        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboTimeWindow)
             comboCounter = 0;
 
         player.anim.SetInteger("ComboCounter", comboCounter);
@@ -42,16 +40,16 @@ public class PlayerPrimaryAttack : PlayerState
         base.Update();
 
         if (stateTimer < 0)
-            rb.velocity = new Vector2(0, 0);
+            player.ZeroVelocity();
 
         if (player.lastAttackFinished == true)
         {
             stateMachine.ChangeState(player.fallBackState);
             return;
         }
-           
+
         if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
-        
+
     }
 }
