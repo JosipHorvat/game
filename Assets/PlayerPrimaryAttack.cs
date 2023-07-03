@@ -18,17 +18,20 @@ public class PlayerPrimaryAttack : PlayerState
     {
         base.Enter();
         
-        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboTimeWindow)
-        {
+        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboTimeWindow) 
             comboCounter = 0;
-        
-        }
+
         player.anim.SetInteger("ComboCounter", comboCounter);
+
+        player.SetVelocity(player.attackMovement[comboCounter].x * player.facingDir, player.attackMovement[comboCounter].y);
+        stateTimer = .1f;
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        player.StartCoroutine("BusyFor", .15f);
 
         comboCounter++;
         lastTimeAttacked = Time.time;
