@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     public float dashDuration;
     public float dashDir { get; private set; }
 
-
     [Header("Collision info")]
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
@@ -28,7 +27,9 @@ public class Player : MonoBehaviour
 
     #region Components
     public Animator anim { get; private set; }
+    public bool lastAttackFinished { get; set; }
     public Rigidbody2D rb { get; private set; }
+ 
     #endregion
 
     #region States
@@ -43,6 +44,8 @@ public class Player : MonoBehaviour
     public PlayerWallJumpState wallJump { get; private set; }
 
     public PlayerPrimaryAttack primaryAttack { get; private set; }
+    public PlayerFallBackState fallBackState { get; private set; }
+
     #endregion
     private void Awake()
     {
@@ -57,6 +60,7 @@ public class Player : MonoBehaviour
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
 
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
+        fallBackState = new PlayerFallBackState(this, stateMachine, "FallBack");
     }
 
     private void Start()

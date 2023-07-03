@@ -10,4 +10,13 @@ public class PlayerAnimationTriggers : MonoBehaviour
     {
         player.AnimationTrigger();
     }
+
+    public void LastAttackFinished()
+    {
+        player.lastAttackFinished = true;
+    }
+    public void ExitFallBackAnimation()
+    {
+        player.lastAttackFinished = false;
+    }
 }
