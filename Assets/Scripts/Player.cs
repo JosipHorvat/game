@@ -28,12 +28,19 @@ public class Player : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
 
+    [Header("Crouch info")]
+    public float crouchColliderHeight = 1.4f;
+    public float standColliderHeight = 2.26f;
+    private Vector2 crouchWorkSpace;
+
+
     public int facingDir { get; private set; } = 1;
     private bool facingRight = true;
+    public bool lastAttackFinished { get; set; }
 
     #region Components
     public Animator anim { get; private set; }
-    public bool lastAttackFinished { get; set; }
+    public CapsuleCollider2D playerCapsuleCollider { get; private set; }
     public Rigidbody2D rb { get; private set; }
  
     #endregion
@@ -52,7 +59,11 @@ public class Player : MonoBehaviour
     public PlayerPrimaryAttack primaryAttack { get; private set; }
     public PlayerFallBackState fallBackState { get; private set; }
 
+    public PlayerCrouchIdleState crouchIdleState { get; private set; }
+
     #endregion
+
+    #region Unity CallBack Functions
     private void Awake()
     {
         stateMachine = new PlayerStateMachine();
@@ -67,12 +78,14 @@ public class Player : MonoBehaviour
 
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
         fallBackState = new PlayerFallBackState(this, stateMachine, "FallBack");
+        crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, "CrouchIdle");
     }
 
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerCapsuleCollider = GetComponent<CapsuleCollider2D>();
 
         stateMachine.Initialize(idleState);
     }
@@ -83,6 +96,7 @@ public class Player : MonoBehaviour
      
         CheckForDashInput();
     }
+    #endregion
 
     public IEnumerator BusyFor(float _seconds)
     {
@@ -129,7 +143,19 @@ public class Player : MonoBehaviour
     #region Collision
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-   
+
+    public void SetColliderHeight(float _height)
+    {
+        Vector2 center = playerCapsuleCollider.offset;
+        crouchWorkSpace.Set(playerCapsuleCollider.size.x, _height);
+
+        center.y += (_height - playerCapsuleCollider.size.y) / 2;
+
+        playerCapsuleCollider.size = crouchWorkSpace;
+        playerCapsuleCollider.offset = center;
+        
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

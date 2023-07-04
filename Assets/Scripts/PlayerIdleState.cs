@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerIdleState : PlayerGroundedState
 {
     public PlayerIdleState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
@@ -24,5 +26,8 @@ public class PlayerIdleState : PlayerGroundedState
 
         if (xInput != 0 && !player.isBusy)
             stateMachine.ChangeState(player.moveState);
+
+        if (yInput == -1)
+            stateMachine.ChangeState(player.crouchIdleState);   
     }
 }

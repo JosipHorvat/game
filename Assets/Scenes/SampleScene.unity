@@ -453,7 +453,7 @@ MonoBehaviour:
   - {x: 4, y: 1.5}
   moveSpeed: 8
   jumpForce: 16
-  dashCooldown: 0
+  dashCooldown: 2
   dashSpeed: 25
   dashDuration: 0.2
   groundCheck: {fileID: 820954733}
@@ -463,6 +463,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  crouchColliderHeight: 1.4
+  standColliderHeight: 2.26
 --- !u!4 &227993267
 Transform:
   m_ObjectHideFlags: 0
@@ -471,7 +473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227993265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -0.72, z: 0}
+  m_LocalPosition: {x: 4.5, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -516,7 +518,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0026038885, y: 0.2573278}
-  m_Size: {x: 1.0954165, y: 2.2654362}
+  m_Size: {x: 1.0954165, y: 2.26}
   m_Direction: 0
 --- !u!1 &409511393
 GameObject:
@@ -572,15 +574,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421246901}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1334731, w: -0.9910525}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5592728, w: -0.82898366}
   m_LocalPosition: {x: 0.47406036, y: -0.009548545, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 62649015}
   m_Father: {fileID: 805013982}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -375.341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -291.989}
 --- !u!1 &466598811
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466598811}
   m_LocalRotation: {x: -0, y: -0, z: -0.6597761, w: 0.75146234}
-  m_LocalPosition: {x: 0.19902039, y: -0.267202, z: 0}
+  m_LocalPosition: {x: 0.1990204, y: -0.267202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1874,8 +1876,8 @@ MonoBehaviour:
   - {fileID: 466598812}
   - {fileID: 602737454}
   m_Bounds:
-    m_Center: {x: -0.15599698, y: 0.3225308, z: 0}
-    m_Extent: {x: 0.838118, y: 1.1532301, z: 0}
+    m_Center: {x: 0.023320496, y: 0.32253087, z: 0}
+    m_Extent: {x: 0.65880054, y: 1.1532302, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
