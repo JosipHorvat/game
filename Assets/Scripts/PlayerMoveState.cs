@@ -26,5 +26,9 @@ public class PlayerMoveState : PlayerGroundedState
 
         if (xInput == 0 || player.IsWallDetected())
             stateMachine.ChangeState(player.idleState);
+        else if (yInput == -1)
+            stateMachine.ChangeState(player.crouchMoveState);
+        
+            
     }
 }

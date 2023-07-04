@@ -26,11 +26,14 @@ public class Player : MonoBehaviour
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
+    [SerializeField] protected Transform ceilingCheck;
+    [SerializeField] protected float ceilingCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
 
     [Header("Crouch info")]
     public float crouchColliderHeight = 1.4f;
     public float standColliderHeight = 2.26f;
+    public float crouchMoveSpeed = 5; 
     private Vector2 crouchWorkSpace;
 
 
@@ -60,6 +63,7 @@ public class Player : MonoBehaviour
     public PlayerFallBackState fallBackState { get; private set; }
 
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
+    public PlayerCrouchMoveState crouchMoveState { get; private set; }
 
     #endregion
 
@@ -78,7 +82,9 @@ public class Player : MonoBehaviour
 
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
         fallBackState = new PlayerFallBackState(this, stateMachine, "FallBack");
+
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, "CrouchIdle");
+        crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, "CrouchMove");
     }
 
     private void Start()
@@ -143,6 +149,7 @@ public class Player : MonoBehaviour
     #region Collision
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    public bool IsCeilingDetected => Physics2D.Raycast(ceilingCheck.position, Vector2.up, ceilingCheckDistance, whatIsGround);
 
     public void SetColliderHeight(float _height)
     {
@@ -156,12 +163,25 @@ public class Player : MonoBehaviour
         
     }
 
+    public void SetWallCheckPositionY(float _height, bool lowerPosition)
+    {
+        Vector3 tempWallCheck = wallCheck.position;
+
+        if (lowerPosition)
+            tempWallCheck.y -= _height;
+        else
+            tempWallCheck.y += _height;
+
+        wallCheck.position = tempWallCheck;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
-
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(ceilingCheck.position, new Vector3(ceilingCheck.position.x, ceilingCheck.position.y + ceilingCheckDistance));
     }
     #endregion
 

@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCrouchIdleState : PlayerGroundedState
+public class PlayerCrouchMoveState : PlayerGroundedState
 {
-    public PlayerCrouchIdleState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
+    public PlayerCrouchMoveState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        player.ZeroVelocity();
         player.SetColliderHeight(player.crouchColliderHeight);
         player.SetWallCheckPositionY(1f, true);
     }
@@ -23,15 +22,15 @@ public class PlayerCrouchIdleState : PlayerGroundedState
         player.SetWallCheckPositionY(1f, false);
     }
 
+
     public override void Update()
     {
-        base.Update();
-        if (xInput == player.facingDir && player.IsWallDetected())
-            return;
+        player.SetVelocity(xInput * player.crouchMoveSpeed, rb.velocity.y);
 
-        if (xInput != 0)
-            stateMachine.ChangeState(player.crouchMoveState);
-        else if(yInput != -1 && !player.IsCeilingDetected)
-            stateMachine.ChangeState(player.idleState);
+        base.Update();
+        if (xInput == 0 || player.IsWallDetected())
+            stateMachine.ChangeState(player.crouchIdleState);
+        else if (yInput != -1 && !player.IsCeilingDetected)
+            stateMachine.ChangeState(player.moveState);
     }
 }
