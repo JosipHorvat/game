@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
 
-    public PlayerPrimaryAttack primaryAttack { get; private set; }
+    public PlayerPrimaryAttackState primaryAttack { get; private set; }
     public PlayerFallBackState fallBackState { get; private set; }
 
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
 
-        primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
+        primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         fallBackState = new PlayerFallBackState(this, stateMachine, "FallBack");
 
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, "CrouchIdle");
