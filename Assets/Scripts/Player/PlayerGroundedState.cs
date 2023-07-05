@@ -20,7 +20,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !player.IsCeilingDetected)
             stateMachine.ChangeState(player.primaryAttack);
 
         if (!player.IsGroundDetected())
