@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9375782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62649015}
   - component: {fileID: 62649014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 84215976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87544561}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109959766}
   - component: {fileID: 109959767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing2A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 123870577}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: legR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 212815762}
   - component: {fileID: 212815763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing1A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 227993266}
   - component: {fileID: 227993269}
   - component: {fileID: 227993268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,6 +618,37 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0026038885, y: 0.2573278}
   m_Size: {x: 1.0954165, y: 2.26}
   m_Direction: 0
+--- !u!1 &376426108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376426109}
+  m_Layer: 7
+  m_Name: EnemySight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376426109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376426108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1580102276}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &409511393
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409511394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421246902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fist_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466598812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 586428896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fist_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 593023811}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 602737454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foot_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620795904}
   - component: {fileID: 620795905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerEyesOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 637843623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso_lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1306,7 @@ GameObject:
   - component: {fileID: 638641947}
   - component: {fileID: 638641950}
   - component: {fileID: 638641949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746733365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 805013982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulder_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820954733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895616661}
   - component: {fileID: 895616662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1919,7 +1950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917393496}
   - component: {fileID: 917393497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing1A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,7 +2033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080737705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: feetL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2033,7 +2064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1140938106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulder_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2065,7 +2096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152298220}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: feetR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2096,7 +2127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209338160}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: torsoLow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242130295}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: torsoUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2195,7 @@ GameObject:
   - component: {fileID: 1284354814}
   - component: {fileID: 1284354815}
   - component: {fileID: 1284354816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2317,7 +2348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497434121}
   - component: {fileID: 1497434122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerMouthOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561815771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2465,7 @@ GameObject:
   - component: {fileID: 1580102277}
   - component: {fileID: 1580102279}
   - component: {fileID: 1580102278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Skeleton_Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2456,6 +2487,7 @@ Transform:
   - {fileID: 638641948}
   - {fileID: 2100811716}
   - {fileID: 593023811}
+  - {fileID: 376426109}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2480,7 +2512,12 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  moveSpeed: 5
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  enemySight: {fileID: 376426109}
+  enemySightyDistance: 8
+  moveSpeed: 2
   idleTime: 1.5
 --- !u!61 &1580102278
 BoxCollider2D:
@@ -2539,7 +2576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593338514}
   - component: {fileID: 1593338515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing2A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2623,7 +2660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643985189}
   - component: {fileID: 1643985190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing3A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650855233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso_upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731699821}
   - component: {fileID: 1731699822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2821,7 +2858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770777505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +3002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787437948}
   - component: {fileID: 1787437949}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1812263385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AxeSwing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3081,7 +3118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1940391626}
   - component: {fileID: 1940391627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing3A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3165,7 +3202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008599366}
   - component: {fileID: 2008599367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: skeletonAxeSwing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061650151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3279,7 +3316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071024904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: legL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3312,7 +3349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073506454}
   - component: {fileID: 2073506455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSwing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3396,7 +3433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083671293}
   - component: {fileID: 2083671294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerEyesClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100811716}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

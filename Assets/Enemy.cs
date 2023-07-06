@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    [SerializeField] protected LayerMask whatIsPlayer;
+    [SerializeField] protected Transform enemySight;
+    [SerializeField] protected float enemySightyDistance;
+
     [Header("Move info")]
     public float moveSpeed;
     public float idleTime;
@@ -20,5 +24,17 @@ public class Enemy : Entity
     {
         base.Update();
         stateMachine.currentState.Update();
+        Debug.Log("I see " + IsPlayerDetected().collider.gameObject.name );
     }
+
+    #region Collision
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(enemySight.position, new Vector3(enemySight.position.x + enemySightyDistance, enemySight.position.y));
+    }
+
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(enemySight.position, Vector2.right * facingDir, enemySightyDistance, whatIsPlayer);
+    #endregion
 }
