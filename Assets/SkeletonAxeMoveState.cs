@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonAxeMoveState : EnemyState
+public class SkeletonAxeMoveState : SkeletonAxeGroundedState
 {
-    private Enemy_Skeleton_Axe enemy;
-    public SkeletonAxeMoveState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Skeleton_Axe _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
+    public SkeletonAxeMoveState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Skeleton_Axe _enemy) : base(_enemyBase, _stateMachine, _animBoolName, _enemy)
     {
-        this.enemy = _enemy;
     }
 
     public override void Enter()
@@ -23,7 +21,7 @@ public class SkeletonAxeMoveState : EnemyState
     public override void Update()
     {
         base.Update();
-        enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, enemy.rb.velocity.y);
+        enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, rb.velocity.y);
         if(enemy.IsWallDetected() || !enemy.IsGroundDetected())
         {
             enemy.Flip();

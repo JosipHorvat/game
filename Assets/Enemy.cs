@@ -11,6 +11,9 @@ public class Enemy : Entity
     [Header("Move info")]
     public float moveSpeed;
     public float idleTime;
+
+    [Header("Attack info")]
+    public float attackDistance;
     
     public EnemyStateMachine stateMachine { get; private set; }
 
@@ -24,7 +27,6 @@ public class Enemy : Entity
     {
         base.Update();
         stateMachine.currentState.Update();
-        Debug.Log("I see " + IsPlayerDetected().collider.gameObject.name );
     }
 
     #region Collision
@@ -33,6 +35,8 @@ public class Enemy : Entity
         base.OnDrawGizmos();
         Gizmos.color = Color.magenta;
         Gizmos.DrawLine(enemySight.position, new Vector3(enemySight.position.x + enemySightyDistance, enemySight.position.y));
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
     }
 
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(enemySight.position, Vector2.right * facingDir, enemySightyDistance, whatIsPlayer);
