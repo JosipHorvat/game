@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 227993266}
   - component: {fileID: 227993269}
   - component: {fileID: 227993268}
+  - component: {fileID: 227993270}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -621,6 +622,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0026038885, y: 0.2573278}
   m_Size: {x: 1.0954165, y: 2.26}
   m_Direction: 0
+--- !u!114 &227993270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227993265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6f2be6b1721f40b24ac9552647e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMaterial: {fileID: 2100000, guid: ed051e8442fa070459d4076ec6228edf, type: 2}
 --- !u!1 &376426108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,6 +2495,7 @@ GameObject:
   - component: {fileID: 1580102277}
   - component: {fileID: 1580102279}
   - component: {fileID: 1580102278}
+  - component: {fileID: 1580102280}
   m_Layer: 7
   m_Name: Enemy_Skeleton_Axe
   m_TagString: Untagged
@@ -2590,6 +2605,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1580102280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580102275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6f2be6b1721f40b24ac9552647e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMaterial: {fileID: 2100000, guid: ed051e8442fa070459d4076ec6228edf, type: 2}
 --- !u!1 &1593338513
 GameObject:
   m_ObjectHideFlags: 0
