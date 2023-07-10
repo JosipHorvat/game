@@ -11,9 +11,13 @@ public class Enemy : Entity
     [Header("Move info")]
     public float moveSpeed;
     public float idleTime;
+    public float battleTime;
+    public float agroDistance;
 
     [Header("Attack info")]
     public float attackDistance;
+    public float attackCooldown;
+    [HideInInspector] public float lastTimeAttacked;
     
     public EnemyStateMachine stateMachine { get; private set; }
 
@@ -28,6 +32,8 @@ public class Enemy : Entity
         base.Update();
         stateMachine.currentState.Update();
     }
+
+    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     #region Collision
     protected override void OnDrawGizmos()

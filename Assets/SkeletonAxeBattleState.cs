@@ -27,12 +27,18 @@ public class SkeletonAxeBattleState : EnemyState
 
         if(enemy.IsPlayerDetected())
         {
+            stateTimer = enemy.battleTime;
+
             if(enemy.IsPlayerDetected().distance < enemy.attackDistance)
             {
-                Debug.Log("Attack!!!");
-                enemy.ZeroVelocity();
-                return;
+                if(CanAttack())
+                stateMachine.ChangeState(enemy.attackState);
             }
+        }
+        else
+        {
+            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 7)
+                stateMachine.ChangeState(enemy.idleState);
         }
 
         // If it is bigger, then player is on the right side of enemy and enemy moves right
@@ -47,6 +53,16 @@ public class SkeletonAxeBattleState : EnemyState
     public override void Exit()
     {
         base.Exit();
+    }
+
+    private bool CanAttack()
+    {
+        if(Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
+        {
+            enemy.lastTimeAttacked = Time.time;
+            return true;
+        }
+        return false;
     }
 
 }

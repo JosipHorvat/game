@@ -11,7 +11,7 @@ public class PlayerCrouchIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.ZeroVelocity();
+        player.SetZeroVelocity();
         player.SetColliderHeight(player.crouchColliderHeight);
         player.SetWallCheckPositionY(1f, true);
     }

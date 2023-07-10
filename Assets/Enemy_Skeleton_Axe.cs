@@ -8,6 +8,7 @@ public class Enemy_Skeleton_Axe : Enemy
     public SkeletonAxeIdleState idleState { get; private set; }
     public SkeletonAxeMoveState moveState { get; private set; }
     public SkeletonAxeBattleState battleState { get; private set; }
+    public SkeletoAxeAttackState attackState { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -16,6 +17,7 @@ public class Enemy_Skeleton_Axe : Enemy
         idleState = new SkeletonAxeIdleState(this, stateMachine, "Idle", this);
         moveState = new SkeletonAxeMoveState(this, stateMachine, "Move", this);
         battleState = new SkeletonAxeBattleState(this, stateMachine, "Move", this);
+        attackState = new SkeletoAxeAttackState(this, stateMachine, "Attack", this);
     }
 
     protected override void Start()
