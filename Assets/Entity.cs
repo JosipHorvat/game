@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Collision info")]
+    public Transform attackCheck;
+    public float attackRadius;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
@@ -32,6 +34,11 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public virtual void Damage()
+    {
+        Debug.Log(gameObject.name + " was damaged");
+    }
+
     protected virtual void Update()
     {
 
@@ -49,6 +56,7 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
         Gizmos.color = Color.red;
         Gizmos.DrawLine(ceilingCheck.position, new Vector3(ceilingCheck.position.x, ceilingCheck.position.y + ceilingCheckDistance));
+        Gizmos.DrawWireSphere(attackCheck.position, attackRadius);
     }
     #endregion
     #region Flip
