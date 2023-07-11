@@ -8,6 +8,11 @@ public class Enemy : Entity
     [SerializeField] protected Transform enemySight;
     [SerializeField] protected float enemySightyDistance;
 
+    [Header("Stunned info")]
+    public float stunDuration;
+    public Vector2 stunDirection;
+
+
     [Header("Move info")]
     public float moveSpeed;
     public float idleTime;
