@@ -35,7 +35,7 @@ public class Enemy_Skeleton_Axe : Enemy
             stateMachine.ChangeState(stunnedState);
     }
 
-    protected override bool CanBeStunned()
+    public override bool CanBeStunned()
     {
        if(base.CanBeStunned())
         {

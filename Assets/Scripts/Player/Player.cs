@@ -8,6 +8,7 @@ public class Player : Entity
 
     [Header("Attack details")]
     public Vector2[] attackMovement;
+    public float counterAttackDuration = .2f;
 
     public bool isBusy { get; private set; }
 
@@ -46,6 +47,7 @@ public class Player : Entity
 
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
+    public PlayerCounterAttackState counterAttack { get; private set; }
 
     #endregion
 
@@ -68,6 +70,7 @@ public class Player : Entity
 
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, "CrouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, "CrouchMove");
+        counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
     }
 
     protected override void Start()
