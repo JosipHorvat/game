@@ -542,6 +542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c400e2e49b3d6a4bbb126819228a34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDirection: {x: 0, y: 0}
+  knockbackDuration: 0
   attackCheck: {fileID: 1729959882}
   attackRadius: 0.8
   groundCheck: {fileID: 820954733}
@@ -557,6 +559,7 @@ MonoBehaviour:
   - {x: 3, y: 1.5}
   - {x: 1, y: 3}
   - {x: 4, y: 1.5}
+  counterAttackDuration: 0.2
   moveSpeed: 8
   jumpForce: 16
   dashCooldown: 2
@@ -2620,6 +2623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd89106d24144545ab7c167d0a0d6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDirection: {x: 7, y: 12}
+  knockbackDuration: 0.07
   attackCheck: {fileID: 1671138468}
   attackRadius: 0.7
   groundCheck: {fileID: 2100811716}
@@ -2687,7 +2692,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 12
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
