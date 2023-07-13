@@ -17,7 +17,7 @@ public class SkeletonAxeBattleState : EnemyState
     {
         base.Enter();
 
-      player = GameObject.Find("Player").transform;  // I don't have Player manager, instead I am declaring player this way.
+        player = PlayerManager.instance.player.transform;
     }
 
 
