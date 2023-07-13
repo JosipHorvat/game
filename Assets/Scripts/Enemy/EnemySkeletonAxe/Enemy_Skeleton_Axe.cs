@@ -11,7 +11,7 @@ public class Enemy_Skeleton_Axe : Enemy
     public SkeletoAxeAttackState attackState { get; private set; }
     public SkeletonStunnedState stunnedState { get; private set; }
     #endregion
-
+    #region Unity CallBack Functions
     protected override void Awake()
     {
         base.Awake();
@@ -31,9 +31,8 @@ public class Enemy_Skeleton_Axe : Enemy
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.U))
-            stateMachine.ChangeState(stunnedState);
     }
+    #endregion
 
     public override bool CanBeStunned()
     {

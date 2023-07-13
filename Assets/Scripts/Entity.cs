@@ -51,7 +51,7 @@ public class Entity : MonoBehaviour
     {
 
     }
-
+    #region Knockback
     public virtual void DamageImpact() => StartCoroutine("HitKnockback");
 
     protected virtual IEnumerator HitKnockback()
@@ -63,7 +63,7 @@ public class Entity : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
         isKnocked = false;
     }
-
+    #endregion
     #region Collision
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
