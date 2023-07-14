@@ -21,6 +21,8 @@ public class Player : Entity
     public float dashDuration;
     public float dashDir { get; private set; }
 
+    public SkillManager skill { get; private set; }
+
     [Header("Crouch info")]
     public float crouchColliderHeight = 1.4f;
     public float standColliderHeight = 2.26f;
@@ -47,6 +49,8 @@ public class Player : Entity
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
     public PlayerCounterAttackState counterAttack { get; private set; }
 
+    public PlayerThrownWeaponAimState aimState { get; private set; }
+    public PlayerThrownWeaponCatchState catchState { get; private set; }
     #endregion
 
     #region Unity CallBack Functions
@@ -69,11 +73,16 @@ public class Player : Entity
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, "CrouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, "CrouchMove");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
+
+        aimState = new PlayerThrownWeaponAimState(this, stateMachine, "AimWithThrown");
+        catchState = new PlayerThrownWeaponCatchState(this, stateMachine, "CatchThrown");
     }
 
     protected override void Start()
     {
         base.Start();
+
+        skill = SkillManager.instance;
 
         playerCapsuleCollider = GetComponent<CapsuleCollider2D>();
 
